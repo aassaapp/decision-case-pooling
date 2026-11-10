@@ -11,10 +11,10 @@ It is **not** an automatic productivity score, an AI-dependence metric, or a gen
 With Skills CLI:
 
 ```sh
-npx skills add yhoiy/decision-case-pooling --skill decision-case-pooling
+npx skills add aassaapp/decision-case-pooling --skill decision-case-pooling
 ```
 
-Or ask your Codex skill installer to install the skill from the root of `https://github.com/yhoiy/decision-case-pooling`.
+Or ask your Codex skill installer to install the skill from the root of `https://github.com/aassaapp/decision-case-pooling`.
 
 ## Example prompts
 
