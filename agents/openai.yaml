@@ -1,4 +1,4 @@
 interface:
   display_name: "Decision Case Pooling"
-  short_description: "AI 협업 중 개발 의사결정과 근거를 Markdown 케이스 풀로 축적"
-  default_prompt: "$decision-case-pooling 이번 개발 작업에서 의사결정 사례를 추출해 케이스 풀에 저장해줘."
+  short_description: "Capture evidence-backed decisions and human/AI contributions by engineering phase"
+  default_prompt: "$decision-case-pooling Extract meaningful engineering decisions from this session, identify phase-level human and AI contributions with evidence, and save the cases to the configured case pool."

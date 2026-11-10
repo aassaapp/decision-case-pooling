@@ -1,7 +1,7 @@
 ---
-schema_version: 2
-id: "새 UUID v4로 대체"
-title: "구체적인 결정이 드러나는 제목"
+schema_version: 3
+id: "REPLACE-WITH-UUID-V4"
+title: "A specific, evidence-backed decision title"
 project: null
 work_date: null
 recorded_at: "YYYY-MM-DD"
@@ -13,44 +13,66 @@ familiarity:
 decided_by: unknown
 user_review: unknown
 tags: []
+# Include only material phases supported by source evidence.
+# Allowed phases: problem_framing, hypothesis_generation, experiment_design,
+# implementation, result_interpretation, final_decision.
+# lead: user | ai | joint | unknown
+# human_actions: originated | challenged | constrained | selected | reviewed | delegated
+# independent_judgment: demonstrated | not_observed | unknown
+# All evidence IDs must appear in the Evidence section below.
+contributions:
+  problem_framing:
+    lead: unknown
+    human_actions: []
+    independent_judgment: unknown
+    evidence: [E1]
 ---
 
-# 구체적인 결정이 드러나는 제목
+# A specific, evidence-backed decision title
 
-> 핵심 결정과 이유를 1~2문장으로 요약한다. 근거가 없으면 이유는 미확인으로 표시한다.
+> Summarize the choice and its reasoning in one or two sentences. If the reasoning is not established, say so.
 
-## 1. 어떤 상황이었나
+## 1. Situation
 
-작업 목표와 제약, 당시 알고 있던 것과 불확실했던 것을 적는다. 프로젝트 전체 소개는 필요한 만큼만 쓴다.
+Describe the goal, operational constraints, relevant context, what was known, and what was uncertain at the time. Do not rewrite the entire project history.
 
-## 2. 무엇 때문에 판단이 필요했나
+## 2. Decision trigger
 
-결정의 계기가 된 AI 제안, 코드 관찰, 테스트 실패 등을 적는다. 무엇이 불확실하거나 우려되었는지 출처와 함께 설명한다.
+Explain which observation, failure, AI proposal, user concern, or change in constraints made a decision necessary. Cite evidence.
 
-## 3. 무엇을 선택했고, 왜 그랬나
+## 3. Options and decision
 
-실제로 검토한 선택지와 최종 결정을 적는다. 선택 기준, 받아들인 단점, 당시 확인된 이유를 연결한다. 기록에 없는 대안이나 이유는 만들지 않는다.
+Only describe options actually considered. Explain the criteria, final choice, rejected alternatives, and the costs or risks knowingly accepted. Separate expected impact from measured outcomes.
 
-## 4. AI와 나는 각각 무엇을 했나
+## 4. Who contributed what
 
-결정에 영향을 준 장면을 순서대로 적는다. 각 장면에서 AI의 제안·실행과 사용자의 지시·검토·판단을 구분하고 [E1]처럼 근거를 연결한다. 주체가 불분명하면 명시한다.
+Reconstruct the consequential steps in chronological order. For each, identify:
 
-## 5. 어떻게 검증했고, 결과는 어땠나
+- **Phase:** One of the canonical `contributions` phases.
+- **AI:** Proposals, analysis, implementation, testing, or corrections actually made by AI.
+- **Human:** Original reasoning, questions, constraints, challenges, delegated tasks, review, and decisions actually evidenced.
+- **Independence:** Which *specific* human judgment was demonstrably independently supplied, if any. Selecting an AI proposal is not by itself independent origination.
 
-- 확인하려던 것:
-- 실행한 검증과 관찰 결과:
-- 검증하지 못한 범위 또는 아직 모르는 결과:
+Explain ambiguities and cite `[E#]`. Do not convert a user's lack of objection into review.
 
-검증 기록이 없으면 '미확인'으로 남긴다. 구현 완료와 효과 확인을 구분한다.
+## 5. Validation, results, and limits
 
-## 6. 다음 작업에 남길 기준
+- **Question tested:**
+- **Method, data, and baseline:**
+- **Observed results (with units and conditions):**
+- **Trade-offs or regressions:**
+- **Not established:** What remains untested, confounded, subjective, or based on a small sample?
 
-사용자가 직접 말한 회고가 있으면 기록한다. AI가 제안한 교훈은 '해석 후보'로 표시하고, 어떤 조건에서 적용할 수 있는지 적는다. 내용이 없으면 무리하게 교훈을 만들지 않는다.
+A completed implementation, a passing build, and a trustworthy user outcome are distinct claims.
 
-## 근거
+## 6. Transferable lessons and learning gaps
 
-- [E1] 출처 종류, 실제 링크 또는 원문 위치, 이 근거가 뒷받침하는 내용.
+Distinguish **the user's documented reflection** from **a retrospective interpretation suggested by AI**. Record the conditions under which a lesson could transfer. If independent mastery of any technique has not been assessed, state that explicitly. Do not present historical participation as proof of interview-ready competence.
 
-## 보완할 질문
+## Evidence
 
-사례를 이해하는 데 꼭 필요한 미확인 사항만 남긴다. 없으면 '없음'으로 적는다.
+- [E1] Source type; exact accessible path, commit, message excerpt, or test output; what it supports.
+
+## Open questions
+
+- Only consequential unanswered questions. Write `None` if there are none.
